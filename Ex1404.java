@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 
 public class Ex1404 extends JFrame {
 	
@@ -51,6 +52,62 @@ public class Ex1404 extends JFrame {
 		resPanel.add(lbl1);
 		JLabel lbl2 = new JLabel("");
 		resPanel.add(lbl2);
+		
+		// + ActionListener
+		plus.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (e.getSource() == plus) { // Check plus button
+					// Get Text Field Number
+					int num01 = Integer.parseInt(num1.getText());
+					int num02 = Integer.parseInt(num2.getText());
+							
+					int result = num01 + num02;
+					lbl2.setText(String.valueOf(result));
+				}
+			}
+		});
+		
+		// - ActionListener
+		minus.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (e.getSource() == minus) { // Check plus button
+					// Get Text Field Number
+					int num01 = Integer.parseInt(num1.getText());
+					int num02 = Integer.parseInt(num2.getText());
+									
+					int result = num01 - num02;
+					lbl2.setText(String.valueOf(result));
+				}
+			}
+		});
+
+		// * ActionListener
+		mult.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (e.getSource() == mult) { // Check plus button
+					// Get Text Field Number
+					int num01 = Integer.parseInt(num1.getText());
+					int num02 = Integer.parseInt(num2.getText());
+											
+					int result = num01 * num02;
+					lbl2.setText(String.valueOf(result));
+				}
+			}
+		});
+				
+		// / ActionListener
+		div.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (e.getSource() == div) { // Check plus button
+					// Get Text Field Number
+					int num01 = Integer.parseInt(num1.getText());
+					int num02 = Integer.parseInt(num2.getText());
+											
+					int result = num01 / num02;
+					lbl2.setText(String.valueOf(result));
+				}
+			}
+		});
 		
 		// 프레임 설정
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
